@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>3D 鹈鹕骑自行车</title>
+  <title>3D 鹈鹕兜风</title>
   <link rel="stylesheet" href="style.css" />
   <script type="importmap">
     {
@@ -18,19 +18,33 @@
   <div id="app"></div>
 
   <div id="panel">
-    <h1>🚲 鹈鹕骑自行车</h1>
-    <label>
-      速度
-      <input id="speed" type="range" min="0" max="3" step="0.05" value="1" />
-      <span id="speedValue">1.00×</span>
-    </label>
-    <div class="buttons">
-      <button id="pause">暂停</button>
-      <button id="follow" class="active">跟随镜头</button>
-      <button id="bell">🔔 按铃</button>
+    <div class="panel-head">
+      <h1>🐦 鹈鹕兜风</h1>
+      <button id="collapse" class="icon" aria-label="收起/展开面板">−</button>
     </div>
-    <p class="hint">拖动旋转视角 · 滚轮缩放 · 右键平移 · 空格暂停</p>
+    <div class="panel-body">
+      <label class="row">场景 <select id="sceneSel"></select></label>
+      <label class="row">装扮 <select id="skinSel"></select></label>
+      <label class="row">座驾 <select id="vehicleSel"></select></label>
+      <label class="row">
+        速度
+        <input id="speed" type="range" min="0" max="3" step="0.05" value="1" />
+        <span id="speedValue">1.00×</span>
+      </label>
+      <div class="buttons">
+        <button id="random">🎲 随机</button>
+        <button id="pause">暂停</button>
+        <button id="follow" class="active">跟随镜头</button>
+        <button id="horn">🔔 按铃</button>
+      </div>
+      <p class="hint">
+        拖动旋转 · 滚轮缩放 · 右键平移<br />
+        快捷键：S 场景 · D 装扮 · V 座驾 · R 随机 · B 按铃 · 空格 暂停
+      </p>
+    </div>
   </div>
+
+  <div id="toast"></div>
 
   <div id="error" hidden>
     无法加载 three.js（需要联网访问 cdn.jsdelivr.net）。
