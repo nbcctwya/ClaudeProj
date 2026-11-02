@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #9fd3f2;
+  font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #1f2a33;
+}
+
+#app,
+#app canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#panel {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  max-width: calc(100vw - 32px);
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  user-select: none;
+}
+
+#panel h1 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+#panel label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+#panel input[type="range"] {
+  flex: 1;
+  min-width: 120px;
+}
+
+#speedValue {
+  width: 3.5em;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 6px 12px;
+  border: 1px solid #c6d3dc;
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f1f6f9;
+}
+
+button.active {
+  background: #f2a33a;
+  border-color: #e08e22;
+  color: #fff;
+}
+
+.hint {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: #56646e;
+}
+
+#error {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #fff3f0;
+  color: #a33a22;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+}
